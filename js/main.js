@@ -193,46 +193,8 @@ var gameInit = function() {
           }
           console.log(testArray);
         }
-
       }
-
       ,
-    // checkdiags: function(board) {
-    //
-    //   for (var i = 0; i < dimension; i++) {
-    //     testArray = []
-    //     for (var j = 0; j <= i; j++) {
-    //       var x = i - j;
-    //       testArray.push(board[x][j]);
-    //     }
-    //     console.log(testArray);
-    //   }
-    //   for (var i = dimension - 2; i >= 0; i--) {
-    //     testArray = []
-    //     for (var j = 0; j <= i; j++) {
-    //       var x = i - j;
-    //       testArray.push(board[dimension - j - 1][dimension - x - 1]);
-    //     }
-    //     console.log(testArray);
-    //   }
-    //   for (var i = dimension - 1; i >= 0; i--) {
-    //     testArray = []
-    //     for (var j = 0; j < dimension - i; j++) {
-    //       testArray.push(board[i + j][j]);
-    //     }
-    //     console.log(testArray);
-    //   }
-    //   for (var i = dimension - 2; i >= 0; i--) {
-    //     testArray = []
-    //     for (var j = i; j >= 0; j--) {
-    //       x = i-j;
-    //       console.log(x);
-    //       testArray.push(board[x][dimension - j -1]);
-    //     }
-    //     console.log(testArray);
-    //   }
-    //
-    // },
     winner: function() {
       alerts.textContent = "WE HAVE A WINNER";
       alerts.classList.toggle('winnerText');
@@ -312,7 +274,6 @@ var gameInit = function() {
       if (zeroCount > Math.abs(dimension - winCount)) {
         return false
       }
-
       var count = []
       for (var i = 0; i < array.length - 1; i++) {
         if ((array[i] != 0) && (array[i] === array[i + 1])) {
@@ -321,17 +282,13 @@ var gameInit = function() {
           count.push(0)
         }
       }
-
       var countNum = 0
-
       for (var i = 0; i < count.length; i++) {
         if ((count[i] != 0) && (count[i] === count[i + 1])) {
           countNum++;
           winningPlayer = array[i];
         }
-
       }
-
       if (countNum >= winCount - 2) {
         if (dimension === winCount) {
           console.log('beep');
@@ -356,7 +313,6 @@ var pickCell = function() {
 }
 
 var game = gameInit();
-
 game.drawGrid();
 game.initialise();
 
